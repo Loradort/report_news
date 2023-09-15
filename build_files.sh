@@ -1,2 +1,2 @@
-pip install -r requriement.txt
+pip install -r requriements.txt
 python3.9 manage.py collectstatic --noinput --clear
