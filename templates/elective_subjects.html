@@ -1,0 +1,42 @@
+{% extends "blank.html" %}
+
+{% block content %}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>รหัสวิชา</th>
+                        <th>รายชื่อวิชา</th>
+                        <th>หน่วยกิต</th>
+                        <th>ปีการศึกษา</th>
+                        <th>เทอม</th>
+                        <th>หมวดหมู่</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for class in classes %}
+                    <tr>
+                        <td>{{ class.class_id }}</td>
+                        <td>{{ class.class_name }}</td>
+                        <td>{{ class.class_credit }}</td>
+                        <td>{{ class.class_year }}</td>
+                        <td>{{ class.semester }}</td>
+                        <td>{{ class.class_category }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
